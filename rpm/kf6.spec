@@ -5,7 +5,7 @@ Release: 0%{?dist}
 Summary: Filesystem and RPM macros for KDE Frameworks 6
 License: BSD-3-Clause
 URL:     http://www.kde.org
-Source0: macros.kf6
+Source0: %{name}-%{version}.tar.bz2
 
 %description
 Filesystem and RPM macros for KDE Frameworks 6
@@ -25,9 +25,12 @@ BuildArch: noarch
 %description rpm-macros
 RPM macros for building KDE Frameworks 6 packages.
 
+%prep
+%setup -q
+
 %install
 
-install -Dpm644 %{_sourcedir}/macros.kf6 %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf6
+install -Dpm644 macros.kf6 %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf6
 sed -i \
   -e "s|@@kf6_VERSION@@|%{version}|g" \
   %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf6
