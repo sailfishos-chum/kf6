@@ -26,6 +26,11 @@
     %{__cmake} \\\
     %{?__cmake_builddir:-S "%{_vpath_srcdir}"} \\\
     %{?__cmake_builddir:-B "%{__cmake_builddir}"} \\\
+%if "%_qt6_build_tool" == "ninja" \
+        -GNinja \\\
+%else \
+        -G"Unix Makefiles" \\\
+%endif \
     -DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
     -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
     -DCMAKE_Fortran_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
