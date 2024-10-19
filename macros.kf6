@@ -6,7 +6,7 @@
 %_kf6_includedir %_includedir/KF6
 %_kf6_libdir %_libdir
 %_kf6_libexecdir %_libexecdir/kf6
-%_kf6_metainfodir %_metainfodir
+%_kf6_metainfodir %_kf6_datadir/metainfo
 %_kf6_qtplugindir %_qt6_plugindir
 %_kf6_plugindir %_qt6_plugindir/kf6
 %_kf6_sysconfdir %_sysconfdir
